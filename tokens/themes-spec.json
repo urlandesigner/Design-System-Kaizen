@@ -1,0 +1,24 @@
+{
+  "description": "Overrides por tema — Escritório/Group vêm do export Figma (modos Theme); Club usa primitives color-kz/club/* existentes",
+  "figmaThemeCollection": "Theme",
+  "modes": {
+    "escritorio": "1377:1",
+    "group": "1374:0"
+  },
+  "club": {
+    "comment": "Club não possui modo no export de variables; mapeamento via primitives club-kz",
+    "overrides": {
+      "color-theme/background/primary": "var(--color-kz-club-50)",
+      "color-theme/surface/brand": "var(--color-kz-club-500)",
+      "color-theme/surface/action/disabled-dark": "var(--color-kz-neutral-600)",
+      "color-theme/icon/brand": "var(--color-kz-club-500)",
+      "color-theme/border/brand": "var(--color-kz-club-500)",
+      "color-theme/border/badge/brand": "var(--color-kz-club-500)",
+      "color-theme/surface/badge/brand": "var(--color-kz-club-500)",
+      "color-theme/surface/button/enabled": "var(--color-kz-club-500)",
+      "color-theme/surface/button/hovered": "var(--color-kz-club-600)",
+      "color-theme/surface/button/selected": "var(--color-kz-club-700)",
+      "rounded-theme/button-default": "var(--rounded-kz-200)"
+    }
+  }
+}

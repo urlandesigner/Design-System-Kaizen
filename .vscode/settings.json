@@ -1,0 +1,5 @@
+{
+  "npm.scriptExplorerAction": "run",
+  "npm.runSilent": true,
+  "debug.javascript.autoAttachFilter": "onlyWithFlag"
+}

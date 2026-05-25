@@ -1,0 +1,37 @@
+{
+  "description": "Especificação do componente $icon — extraído do Figma Kaizen Production v1.1.0",
+  "figma": {
+    "fileKey": "ESXDqskymLpcik4GMiJDlD",
+    "nodeId": "1405:9108",
+    "componentName": "$icon",
+    "url": "https://www.figma.com/design/ESXDqskymLpcik4GMiJDlD/Kaizen-%7C-Production--v-1.1.0-?node-id=1405-9108"
+  },
+  "variants": {
+    "size": ["Small", "Medium", "Large"],
+    "style": ["Regular", "Solid"],
+    "type": ["Default", "Brand"]
+  },
+  "defaultColorVariable": "color-theme/icon/secondary-dark",
+  "sizes": [
+    {
+      "name": "icon-size/sm",
+      "container": "16px",
+      "glyph": "13px",
+      "lineHeight": "12px",
+      "figmaVariant": "Size=Small"
+    },
+    {
+      "name": "icon-size/md",
+      "container": "20px",
+      "glyph": "16px",
+      "figmaVariant": "Size=Medium"
+    },
+    {
+      "name": "icon-size/lg",
+      "container": "24px",
+      "glyph": "20px",
+      "lineHeight": "21px",
+      "figmaVariant": "Size=Large"
+    }
+  ]
+}

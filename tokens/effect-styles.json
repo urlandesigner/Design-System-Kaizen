@@ -1,0 +1,9 @@
+{
+  "description": "Effect styles (box shadow) — complemento ao export de variables do Figma",
+  "shadows": [
+    {
+      "name": "shadow-sm",
+      "value": "0 0 8px 2px rgb(5 5 5 / 0.1)"
+    }
+  ]
+}
