@@ -1,3 +1,4 @@
+import { CopyInlineButton } from "@/components/copy-inline-button";
 import type { TokenDefinition } from "@/lib/documentation/types/component-doc";
 import { isThemeAwareToken, themeTokenNote } from "@/lib/documentation/themed-tokens";
 
@@ -29,7 +30,10 @@ export function TokenTable({ rows }: TokenTableProps) {
             return (
               <tr key={row.token}>
                 <td>
-                  <code>{row.token}</code>
+                  <div className="copy-cell">
+                    <code>{row.token}</code>
+                    <CopyInlineButton value={row.token} variant="ghost" label="Token" />
+                  </div>
                 </td>
                 <td className="text-muted-foreground">{row.usage}</td>
                 {showThemeColumn ? (

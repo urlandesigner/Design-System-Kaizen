@@ -1,3 +1,4 @@
+import { ComponentFeedback } from "@/lib/documentation/editorial/component-feedback";
 import { DocPage } from "@/lib/documentation/editorial/doc-page";
 import { SectionRenderer } from "@/lib/documentation/renderer/section-renderer";
 import { buildOfficialComponentToc } from "@/lib/documentation/template/component-doc-template";
@@ -9,7 +10,10 @@ type ComponentDocPageProps = {
 
 export function ComponentDocPage({ config }: ComponentDocPageProps) {
   const { meta, sections } = config;
-  const toc = config.toc ?? buildOfficialComponentToc(sections);
+  const tocBase = config.toc ?? buildOfficialComponentToc(sections);
+  const toc = tocBase.some((item) => item.id === "feedback")
+    ? tocBase
+    : [...tocBase, { id: "feedback", title: "Feedback" }];
 
   return (
     <DocPage
@@ -22,6 +26,7 @@ export function ComponentDocPage({ config }: ComponentDocPageProps) {
       {sections.map((section) => (
         <SectionRenderer key={section.id} section={section} />
       ))}
+      <ComponentFeedback componentName={meta.title} />
     </DocPage>
   );
 }

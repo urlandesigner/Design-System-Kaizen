@@ -24,7 +24,10 @@ export type ChangelogSection = {
 export type ChangelogRelease = {
   id: string;
   version: string;
-  status: "unreleased" | "released";
+  status: "current" | "released" | "planned";
+  publishedAt: string;
+  summary: string;
+  categories: string[];
   body: string;
 };
 
