@@ -7,6 +7,15 @@ export const sidebarPrimaryLinks: NavItem[] = [
 
 export const mainNavigation: NavSection[] = [
   {
+    title: "Get Started",
+    items: [
+      { title: "Visão geral", href: "/get-started" },
+      { title: "Instalação", href: "/get-started/installation" },
+      { title: "Design → Dev", href: "/get-started/design-to-dev" },
+      { title: "Contribuição", href: "/get-started/contributing" },
+    ],
+  },
+  {
     title: "Foundations",
     items: [
       { title: "Visão geral", href: "/foundations" },
@@ -30,6 +39,15 @@ export const mainNavigation: NavSection[] = [
       { title: "Checkbox", href: "/components/checkbox" },
       { title: "Input", href: "/components/input" },
       { title: "Radio", href: "/components/radio" },
+    ],
+  },
+  {
+    title: "Content",
+    items: [
+      { title: "Visão geral", href: "/content" },
+      { title: "Voice & Tone", href: "/content/voice-tone" },
+      { title: "Mensagens de erro", href: "/content/error-messages" },
+      { title: "Terminologia", href: "/content/terminology" },
     ],
   },
   {
@@ -66,6 +84,22 @@ export const mainNavigation: NavSection[] = [
       { title: "Screen readers", href: "/accessibility/screen-readers" },
       { title: "Touch targets", href: "/accessibility/touch-targets" },
       { title: "ARIA", href: "/accessibility/aria" },
+    ],
+  },
+  {
+    title: "Resources",
+    items: [
+      { title: "Visão geral", href: "/resources" },
+      { title: "Figma", href: "/resources/figma" },
+      { title: "Storybook", href: "/resources/storybook" },
+      { title: "NPM", href: "/resources/npm" },
+    ],
+  },
+  {
+    title: "Governança",
+    items: [
+      { title: "Visão geral", href: "/governance" },
+      { title: "Roadmap", href: "/governance/roadmap" },
     ],
   },
 ];

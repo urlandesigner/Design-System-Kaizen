@@ -7,6 +7,18 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   locale: "pt-BR",
   version: "0.1",
+  repositoryUrl: "https://github.com/urlandesigner/Design-System-Kaizen",
+  issueTrackerUrl:
+    "https://github.com/urlandesigner/Design-System-Kaizen/issues/new",
+  resources: {
+    figmaBeta:
+      "https://www.figma.com/design/xuVfKLrlHx3KI7fufarz1L/Kaizen-%7C-Beta--v-1.1.0-?m=auto&t=g177VJ65Z0NIX6bA-6",
+    figmaProduction:
+      "https://www.figma.com/design/ESXDqskymLpcik4GMiJDlD/Kaizen-%7C-Production--v-1.1.0-?m=auto&t=g177VJ65Z0NIX6bA-6",
+    storybook: "https://github.com/urlandesigner/Design-System-Kaizen",
+    npmPackage: "@ybera/kaizen",
+    npmUrl: "https://www.npmjs.com/package/@ybera/kaizen",
+  },
 } as const;
 
 export const homeQuickLinks = [
