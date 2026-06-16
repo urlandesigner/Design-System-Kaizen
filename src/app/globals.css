@@ -2955,6 +2955,10 @@
     box-shadow: var(--shadow-inset);
   }
 
+  .doc-do-dont-column {
+    @apply rounded-2xl border border-border/40 p-[var(--space-kz-600)] transition-[border-color,box-shadow] duration-200;
+  }
+
   .doc-do-dont-column--do {
     border-color: color-mix(in oklab, var(--color-kz-green-600, #50ae47) 18%, var(--border));
     background-color: color-mix(in oklab, var(--surface-raised) 94%, var(--color-kz-green-50, #f4fbf4));
