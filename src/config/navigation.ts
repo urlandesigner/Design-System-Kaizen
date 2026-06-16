@@ -2,87 +2,70 @@ import type { NavItem, NavSection } from "@/types/navigation";
 
 export const sidebarPrimaryLinks: NavItem[] = [
   { title: "Home", href: "/" },
+  { title: "Changelog", href: "/changelog" },
 ];
 
 export const mainNavigation: NavSection[] = [
   {
-    title: "Get Started",
-    items: [
-      { title: "O que é o Kaizen", href: "/get-started/what-is-kaizen" },
-      { title: "Como começar", href: "/get-started/quick-start" },
-      { title: "Fluxo Design → Desenvolvimento", href: "/get-started/design-to-dev" },
-      { title: "Como contribuir", href: "/get-started/contributing" },
-    ],
-  },
-  {
     title: "Foundations",
     items: [
-      { title: "Overview", href: "/foundations" },
+      { title: "Visão geral", href: "/foundations" },
       { title: "Colors", href: "/foundations/colors" },
       { title: "Typography", href: "/foundations/typography" },
       { title: "Spacing", href: "/foundations/spacing" },
+      { title: "Border", href: "/foundations/border" },
+      { title: "Radius", href: "/foundations/radius" },
+      { title: "Elevation", href: "/foundations/elevation" },
       { title: "Icons", href: "/foundations/icons" },
+      { title: "Grid", href: "/foundations/grid" },
+      { title: "Motion", href: "/foundations/motion" },
     ],
   },
   {
     title: "Components",
     items: [
-      { title: "Overview", href: "/components" },
       { title: "Accordion", href: "/components/accordion" },
-      { title: "Alert", href: "/components/alert" },
       { title: "Badge", href: "/components/badge" },
-      { title: "Bottom Navigation", href: "/components/bottom-navigation" },
       { title: "Button", href: "/components/button" },
       { title: "Checkbox", href: "/components/checkbox" },
-      { title: "Header", href: "/components/header" },
       { title: "Input", href: "/components/input" },
-      { title: "Metric Card", href: "/components/metric-card" },
       { title: "Radio", href: "/components/radio" },
-      { title: "Sheet", href: "/components/sheet" },
-      { title: "Tables", href: "/components/tables" },
     ],
   },
   {
     title: "Patterns",
     items: [
-      { title: "Overview", href: "/patterns" },
-      { title: "Forms", href: "/patterns/forms" },
+      { title: "Visão geral", href: "/patterns" },
+      { title: "Checkout", href: "/patterns/checkout" },
+      { title: "Dashboard", href: "/patterns/dashboard" },
+      { title: "Empty State", href: "/patterns/empty-state" },
       { title: "Filters", href: "/patterns/filters" },
-      { title: "Empty States", href: "/patterns/empty-state" },
-      { title: "Error States", href: "/patterns/error-states" },
-      { title: "Loading States", href: "/patterns/loading-states" },
+      { title: "Success Flow", href: "/patterns/success-flow" },
+      { title: "Success State", href: "/patterns/success-state" },
+      { title: "Notifications", href: "/patterns/notifications" },
     ],
   },
   {
-    title: "Resources",
+    title: "Templates",
     items: [
-      { title: "Figma", href: "/resources/figma" },
-      { title: "Storybook", href: "/resources/storybook" },
-      { title: "NPM", href: "/resources/npm" },
-      { title: "Downloads", href: "/resources/downloads" },
+      { title: "Visão geral", href: "/templates" },
+      { title: "App Screen", href: "/templates/app-screen" },
+      { title: "Hero Dashboard", href: "/templates/hero-dashboard" },
+      { title: "Checkout Screen", href: "/templates/checkout-screen" },
+      { title: "Success Screen", href: "/templates/success-screen" },
+      { title: "Authentication", href: "/templates/authentication" },
     ],
   },
   {
-    title: "What's New",
+    title: "Accessibility",
     items: [
-      { title: "Changelog", href: "/changelog" },
-      { title: "Releases", href: "/releases" },
-    ],
-  },
-  {
-    title: "News",
-    items: [
-      { title: "Artigos", href: "/news/articles" },
-      { title: "Cultura", href: "/news/culture" },
-      { title: "Evolução do Design System", href: "/news/evolution" },
-    ],
-  },
-  {
-    title: "About",
-    items: [
-      { title: "Missão", href: "/about/mission" },
-      { title: "Princípios", href: "/about/principles" },
-      { title: "Roadmap", href: "/about/roadmap" },
+      { title: "Visão geral", href: "/accessibility" },
+      { title: "Contraste", href: "/accessibility/contrast" },
+      { title: "Keyboard navigation", href: "/accessibility/keyboard-navigation" },
+      { title: "Focus states", href: "/accessibility/focus-states" },
+      { title: "Screen readers", href: "/accessibility/screen-readers" },
+      { title: "Touch targets", href: "/accessibility/touch-targets" },
+      { title: "ARIA", href: "/accessibility/aria" },
     ],
   },
 ];
@@ -90,11 +73,10 @@ export const mainNavigation: NavSection[] = [
 /** @deprecated Navegação movida para a sidebar. Mantido para referência. */
 export const topNavigation = [
   { title: "Home", href: "/" },
-  { title: "Get Started", href: "/get-started/what-is-kaizen" },
   { title: "Foundations", href: "/foundations" },
   { title: "Components", href: "/components" },
   { title: "Patterns", href: "/patterns" },
-  { title: "Resources", href: "/resources/figma" },
-  { title: "What's New", href: "/changelog" },
-  { title: "About", href: "/about/mission" },
+  { title: "Templates", href: "/templates" },
+  { title: "Accessibility", href: "/accessibility" },
+  { title: "Changelog", href: "/changelog" },
 ] as const;

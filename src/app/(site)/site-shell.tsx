@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-import { SiteFooter } from "@/app/(site)/site-footer";
 import { SiteHeader } from "@/app/(site)/site-header";
 import { SidebarGroup } from "@/lib/documentation/editorial/sidebar-group";
 import {
@@ -48,28 +47,30 @@ export function SiteShell({ children }: SiteShellProps) {
       <div className="site-shell-body">
         <aside className="site-sidebar">
           <nav aria-label="Documentação" className="site-sidebar-nav">
-            <ul className="sidebar-groups">
+            <ul className="sidebar-primary-links">
               {sidebarPrimaryLinks.map((item) => {
                 if (!item.href) return null;
                 const isActive = isSidebarNavActive(pathname, item.href);
 
                 return (
-                  <li key={item.href} className="sidebar-home-item">
+                  <li key={item.href}>
                     <Link
                       href={item.href}
                       aria-current={isActive ? "page" : undefined}
                       className={cn(
-                        "sidebar-section-trigger",
-                        isActive && "sidebar-section-trigger--active",
+                        "sidebar-link sidebar-link--primary",
+                        isActive && "sidebar-link--active",
                       )}
                     >
-                      <span>{item.title}</span>
+                      {item.title}
                     </Link>
                   </li>
                 );
               })}
+            </ul>
 
-              {mainNavigation.map((section) => {
+            <ul className="sidebar-groups">
+              {mainNavigation.map((section, index) => {
                 const sectionId = toSectionId(section.title);
                 const isExpanded = expandedSections[sectionId] ?? false;
                 const sectionActive = section.items.some((item) =>
@@ -85,7 +86,7 @@ export function SiteShell({ children }: SiteShellProps) {
                     pathname={pathname}
                     isExpanded={isExpanded}
                     isSectionActive={sectionActive}
-                    showDivider
+                    showDivider={index > 0}
                     onToggle={() => toggleSection(sectionId)}
                   />
                 );
@@ -95,10 +96,7 @@ export function SiteShell({ children }: SiteShellProps) {
         </aside>
 
         <main className="site-main">
-          <div className="site-main-inner site-main-inner--doc">
-            {children}
-            <SiteFooter />
-          </div>
+          <div className="site-main-inner site-main-inner--doc">{children}</div>
         </main>
       </div>
     </div>

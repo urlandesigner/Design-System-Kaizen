@@ -35,8 +35,7 @@ export function SidebarNavItem({ item, pathname, depth = 0 }: SidebarNavItemProp
 
   if (!item.href) return null;
 
-  const isOverview = item.title === "Overview";
-  const isActive = isOverview ? pathname === item.href : isSidebarNavActive(pathname, item.href);
+  const isActive = isSidebarNavActive(pathname, item.href);
 
   return (
     <li>

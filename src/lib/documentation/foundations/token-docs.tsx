@@ -1,6 +1,5 @@
 import { StandardPage } from "@/lib/documentation/primitives/standard-page";
 import type { FlatToken } from "@/lib/tokens";
-import { CopyInlineButton } from "@/components/copy-inline-button";
 import {
   familyToTitle,
   figmaShortName,
@@ -139,22 +138,11 @@ function TokenTableRow({
         </td>
       ) : null}
       <td className="token-table-cell token-table-col token-table-col--reference">
-        <div className="copy-cell">
-          <code>{reference}</code>
-          <CopyInlineButton value={reference} variant="ghost" label="Ref" />
-        </div>
+        {reference}
       </td>
-      <td className="token-table-cell token-table-col token-table-col--name">
-        <div className="copy-cell">
-          <code>{shortName}</code>
-          <CopyInlineButton value={shortName} variant="ghost" label="Token" />
-        </div>
-      </td>
+      <td className="token-table-cell token-table-col token-table-col--name">{shortName}</td>
       <td className="token-table-cell token-table-col token-table-col--value">
-        <div className="copy-cell copy-cell--end">
-          <code>{displayValue}</code>
-          <CopyInlineButton value={displayValue} variant="ghost" label="Valor" />
-        </div>
+        {displayValue}
       </td>
     </tr>
   );

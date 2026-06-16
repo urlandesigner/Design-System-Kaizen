@@ -5,8 +5,6 @@ export const siteConfig = {
     "Portal oficial do Design System da Ybera — documentação, componentes, tokens e padrões para designers e desenvolvedores.",
   organization: "Ybera",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  repositoryUrl: "https://github.com/urlandesigner/Design-System-Kaizen",
-  issueTrackerUrl: "https://github.com/urlandesigner/Design-System-Kaizen/issues/new",
   locale: "pt-BR",
   version: "0.1",
 } as const;
