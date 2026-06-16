@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 
+import { CopyInlineButton } from "@/components/copy-inline-button";
 import { AnatomyBlock } from "@/lib/documentation/editorial/anatomy-block";
 import {
   PREVIEW_TABS,
@@ -74,14 +75,19 @@ export function DocShowcase({
       ) : null}
 
       {resolvedTab === "code" && code ? (
-        <pre
+        <div
           id={showcasePanelId(SHOWCASE_ID, "code")}
           role="tabpanel"
           aria-labelledby={showcaseTabId(SHOWCASE_ID, "code")}
           className="doc-showcase-code"
         >
-          <code>{code}</code>
-        </pre>
+          <div className="doc-showcase-code-toolbar">
+            <CopyInlineButton value={code} variant="ghost" />
+          </div>
+          <pre className="doc-showcase-code-pre">
+            <code>{code}</code>
+          </pre>
+        </div>
       ) : null}
 
       {resolvedTab === "anatomy" && anatomy ? (

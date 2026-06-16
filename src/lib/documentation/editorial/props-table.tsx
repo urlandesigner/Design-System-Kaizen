@@ -1,3 +1,4 @@
+import { CopyInlineButton } from "@/components/copy-inline-button";
 import type { PropDefinition } from "@/lib/documentation/types/component-doc";
 
 type PropsTableProps = {
@@ -20,13 +21,30 @@ export function PropsTable({ rows }: PropsTableProps) {
           {rows.map((row) => (
             <tr key={row.name}>
               <td>
-                <code>{row.name}</code>
+                <div className="copy-cell">
+                  <code>{row.name}</code>
+                  <CopyInlineButton value={row.name} variant="ghost" label="Prop" />
+                </div>
               </td>
               <td className="text-muted-foreground">
-                <code>{row.type}</code>
+                <div className="copy-cell">
+                  <code>{row.type}</code>
+                  <CopyInlineButton value={row.type} variant="ghost" label="Tipo" />
+                </div>
               </td>
               <td className="text-muted-foreground">
-                {row.defaultValue ? <code>{row.defaultValue}</code> : "—"}
+                {row.defaultValue ? (
+                  <div className="copy-cell">
+                    <code>{row.defaultValue}</code>
+                    <CopyInlineButton
+                      value={row.defaultValue}
+                      variant="ghost"
+                      label="Padrão"
+                    />
+                  </div>
+                ) : (
+                  "—"
+                )}
               </td>
               <td className="text-muted-foreground">{row.description}</td>
             </tr>
