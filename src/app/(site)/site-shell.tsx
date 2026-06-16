@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
+import { SiteFooter } from "@/app/(site)/site-footer";
 import { SiteHeader } from "@/app/(site)/site-header";
 import { SidebarGroup } from "@/lib/documentation/editorial/sidebar-group";
 import {
@@ -96,7 +97,10 @@ export function SiteShell({ children }: SiteShellProps) {
         </aside>
 
         <main className="site-main">
-          <div className="site-main-inner site-main-inner--doc">{children}</div>
+          <div className="site-main-inner site-main-inner--doc">
+            {children}
+            <SiteFooter />
+          </div>
         </main>
       </div>
     </div>

@@ -27,6 +27,9 @@
   --kz-rhythm-lg: 2rem;
   --kz-rhythm-xl: 3rem;
   --kz-rhythm-2xl: 4.5rem;
+  /* Passo ausente na escala gerada (tokens.css vai de 600=24px → 800=32px).
+     Referenciado em 8 lugares (gap/padding); sem ele o valor colapsa para 0. */
+  --space-kz-700: 28px;
   --nav-fg: var(--kz-ink-muted);
   --nav-fg-hover: var(--kz-ink-soft);
   --nav-fg-active: var(--kz-ink);
@@ -187,7 +190,7 @@
   --width-doc-component: var(--width-doc-main);
   --width-content: var(--width-doc-main);
   --width-toc: var(--width-doc-rail);
-  --width-sidebar: 18.25rem;
+  --width-sidebar: 250px;
   --width-shell: 100rem;
 
   /* Figma tokens — use with arbitrary values, e.g. bg-[var(--color-theme-surface-primary)] */
@@ -413,9 +416,16 @@
     transform: translateX(2px);
   }
 
-  .sidebar-link--primary {
+  a.sidebar-link--primary {
     @apply px-2.5 py-1.5 text-[0.625rem] font-semibold tracking-[0.12em] uppercase;
     color: var(--nav-fg);
+  }
+
+  a.sidebar-link--primary:hover:not(.sidebar-link--active) {
+    color: var(--nav-fg-hover);
+    background-color: var(--nav-hover-bg);
+    box-shadow: none;
+    transform: none;
   }
 
   a.sidebar-link--active {
@@ -2507,7 +2517,7 @@
   }
 
   .doc-component-page .component-feedback-panel {
-    @apply grid gap-[var(--space-kz-700)];
+    @apply block;
   }
 
   .doc-component-page .component-feedback-shell {
@@ -2562,11 +2572,11 @@
   }
 
   .doc-component-page .component-feedback-actions {
-    @apply grid gap-4 md:grid-cols-2 2xl:grid-cols-3;
+    @apply mt-[var(--space-kz-700)] grid grid-cols-1 gap-3 border-t border-[var(--kz-line-subtle)] pt-[var(--space-kz-700)] sm:grid-cols-3;
   }
 
   .doc-component-page .component-feedback-action {
-    @apply flex min-h-[15rem] flex-col rounded-[1.25rem] border border-[var(--kz-line-subtle)] bg-surface-raised/74 p-5 transition-[border-color,box-shadow,transform,background-color] duration-[var(--kz-duration)] ease-[var(--kz-ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply flex flex-col rounded-[1rem] border border-[var(--kz-line-subtle)] bg-surface-raised/74 p-4 transition-[border-color,box-shadow,transform,background-color] duration-[var(--kz-duration)] ease-[var(--kz-ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     box-shadow: var(--shadow-card), var(--shadow-inset);
   }
 
@@ -2577,15 +2587,15 @@
   }
 
   .doc-component-page .component-feedback-action strong {
-    @apply block max-w-[12ch] text-[1.0625rem] font-semibold leading-[1.28] tracking-[-0.03em] text-foreground;
+    @apply block text-[0.9375rem] font-semibold leading-[1.3] tracking-[-0.02em] text-foreground;
   }
 
   .doc-component-page .component-feedback-action p {
-    @apply mt-4 max-w-[24ch] text-[0.9375rem] leading-[1.7] text-muted-foreground;
+    @apply mt-2 text-[0.8125rem] leading-[1.55] text-muted-foreground;
   }
 
   .doc-component-page .component-feedback-action span {
-    @apply mt-auto pt-6 block font-mono text-[0.6875rem] leading-[1.55] text-muted-foreground;
+    @apply mt-3 block font-mono text-[0.625rem] leading-[1.5] text-muted-foreground/80;
     word-break: break-word;
   }
 
