@@ -36,7 +36,7 @@ export default function Page() {
         geral.
       </p>
       <p className="doc-body text-muted-foreground">
-        O mínimo absoluto definido pela WCAG 2.1 no critério{" "}
+        O mínimo absoluto definido pela WCAG 2.2 no critério{" "}
         <strong>2.5.8 (AA)</strong> é <strong>24×24px</strong>. Trate-o como
         piso de conformidade, não como meta: alvos entre 24 e 44px só são
         aceitáveis quando há espaçamento suficiente ao redor e não há espaço para
@@ -126,7 +126,7 @@ export default function Page() {
       <BulletList
         items={[
           "Use 44×44px como padrão para qualquer alvo interativo.",
-          "24×24px é o mínimo absoluto do WCAG 2.5.8 — apenas com espaçamento adequado.",
+          "24×24px é o mínimo absoluto do WCAG 2.2 (critério 2.5.8) — apenas com espaçamento adequado.",
           "Garanta ao menos 8px entre alvos adjacentes.",
           "Amplie a área de toque com padding sem necessariamente aumentar o visual.",
         ]}

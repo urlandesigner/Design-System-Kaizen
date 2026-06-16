@@ -38,7 +38,7 @@ export default function Page() {
           "Evolução incremental (kaizen): preferimos melhorias pequenas e contínuas a grandes reescritas. Cada mudança deve ser absorvível pelos times sem ruptura.",
           "Decisões documentadas e rastreáveis: nada entra no sistema sem registro. Toda mudança relevante tem origem em uma proposta, uma discussão e um histórico no changelog.",
           "Acessibilidade como critério não-negociável: um componente só é considerado pronto quando atende aos requisitos de acessibilidade do Kaizen — não é um extra opcional.",
-          "Tokens como fonte de verdade: cores, espaçamento, tipografia e demais decisões visuais vivem nos tokens. Valores fixos fora dos tokens são tratados como dívida e não como padrão.",
+          "Tokens como fonte da verdade: cores, espaçamento, tipografia e demais decisões visuais vivem nos tokens. Valores fixos fora dos tokens são tratados como dívida e não como padrão.",
           "Consistência acima de preferência individual: divergências se resolvem em favor do padrão já estabelecido, salvo quando há justificativa explícita para mudá-lo.",
         ]}
       />

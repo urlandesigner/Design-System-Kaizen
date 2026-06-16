@@ -48,7 +48,7 @@ export function ChangelogView() {
               <details
                 key={release.id}
                 id={release.id}
-                className="changelog-release scroll-mt-[calc(var(--header-height)+1.5rem)]"
+                className="changelog-release surface-card scroll-mt-[calc(var(--header-height)+1.5rem)]"
                 open={isLatestRelease}
               >
                 <summary className="changelog-release-summary">

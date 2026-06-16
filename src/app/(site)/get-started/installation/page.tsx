@@ -84,7 +84,7 @@ import "${siteConfig.resources.npmPackage}/styles.css";`}</code>
         <code>{`import { Button } from "${siteConfig.resources.npmPackage}";
 
 export function Example() {
-  return <Button variant="filled">Continuar</Button>;
+  return <Button variant="primary">Continuar</Button>;
 }`}</code>
       </pre>
 
@@ -100,7 +100,7 @@ export function Example() {
       </h2>
       <p className="doc-body">
         Veja a página de <a href="/resources/npm">NPM</a> para versões e notas de
-        release, ou entenda como o design chega até esse código em{" "}
+        release, ou entenda como o design chega até este código em{" "}
         <a href="/get-started/design-to-dev">Design → Dev</a>.
       </p>
     </StandardPage>

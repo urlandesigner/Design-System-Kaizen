@@ -41,7 +41,7 @@ export default function Page() {
       </h3>
       <BulletList
         items={[
-          "Texto normal (até 18px, ou 14px em negrito): mínimo 4.5:1 (AA, critério 1.4.3).",
+          "Texto normal (abaixo de 24px, ou abaixo de 18.66px em negrito): mínimo 4.5:1 (AA, critério 1.4.3).",
           "Texto grande (a partir de 24px, ou 18.66px em negrito): mínimo 3:1 (AA).",
           "Nível AAA (1.4.6): 7:1 para texto normal e 4.5:1 para texto grande.",
         ]}

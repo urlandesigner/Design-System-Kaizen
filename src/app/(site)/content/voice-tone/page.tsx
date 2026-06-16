@@ -129,7 +129,7 @@ export default function Page() {
           },
           {
             label: "Cheia de jargão",
-            description: "Termos técnicos que o usuário não precisa conhecer.",
+            description: "Termos técnicos que a pessoa não precisa conhecer.",
             example: (
               <ExampleCopy>
                 Provisionamento do tenant concluído. Endpoint disponível.
@@ -215,7 +215,7 @@ export default function Page() {
         dontItems={[
           {
             label: "Culpa a pessoa",
-            description: "Coloca a responsabilidade no usuário e soa acusatório.",
+            description: "Coloca a responsabilidade na pessoa e soa acusatório.",
             example: (
               <ExampleCopy>
                 Você preencheu os dados do cartão incorretamente.

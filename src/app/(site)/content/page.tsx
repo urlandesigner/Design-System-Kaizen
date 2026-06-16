@@ -48,7 +48,7 @@ export default function Page() {
         <h1 className="doc-title mt-4">Conteúdo</h1>
         <p className="doc-description">
           Palavras são interface. Cada rótulo, mensagem e instrução guia uma
-          decisão do usuário — por isso o conteúdo é parte do design system, não
+          decisão da pessoa — por isso o conteúdo é parte do design system, não
           um detalhe deixado para o fim. Esta seção define como o Kaizen escreve.
         </p>
       </header>
@@ -217,7 +217,7 @@ export default function Page() {
           {
             label: "Sinônimos espalhados",
             description:
-              "Deletar, apagar e remover misturados confundem o usuário.",
+              "Deletar, apagar e remover misturados confundem a pessoa.",
             example: <ExampleCopy>Deletar / Apagar / Remover conta</ExampleCopy>,
           },
         ]}
@@ -227,7 +227,7 @@ export default function Page() {
         Aprofunde por tópico
       </h2>
       <p className="doc-body">
-        Cada área abaixo detalha diretrizes, exemplos de cópia e padrões de
+        Cada área abaixo detalha diretrizes, exemplos de texto e padrões de
         escrita específicos.
       </p>
       <ul className="doc-list">
@@ -245,7 +245,7 @@ export default function Page() {
       </ul>
 
       <Callout variant="info" title="Conteúdo é responsabilidade de todo mundo">
-        Design, produto e engenharia escrevem texto que chega ao usuário. Estes
+        Design, produto e engenharia escrevem texto que chega à pessoa. Estes
         princípios existem para que qualquer pessoa do time consiga escrever no
         tom da Ybera, sem depender de um único revisor.
       </Callout>

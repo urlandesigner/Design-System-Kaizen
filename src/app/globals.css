@@ -876,12 +876,12 @@
   }
 
   .home-manifesto {
-    @apply relative border-t border-[var(--kz-line)] py-[var(--kz-rhythm-xl)];
+    @apply relative pt-[var(--kz-rhythm-2xl)] pb-[var(--kz-rhythm-xl)];
   }
 
   .home-manifesto-mark {
     @apply font-display text-[3rem] leading-none md:text-[4rem];
-    color: color-mix(in oklab, var(--accent-interactive) 90%, transparent);
+    color: color-mix(in oklab, var(--muted-foreground) 72%, transparent);
   }
 
   .home-manifesto-quote {
@@ -3288,6 +3288,83 @@
 
   .changelog-entry--deprecated .changelog-entry-type {
     color: color-mix(in oklab, var(--color-kz-purple-600, #9333ea) 85%, var(--muted-foreground));
+  }
+
+  /* Releases as standard system cards (.surface-card) + internal layout */
+  .changelog-releases {
+    @apply mt-8 flex flex-col gap-5;
+  }
+
+  .changelog-release {
+    @apply overflow-hidden transition-[border-color,box-shadow] duration-[var(--kz-duration)] ease-[var(--kz-ease-out)];
+  }
+
+  .changelog-release[open] {
+    border-color: var(--kz-line);
+  }
+
+  .changelog-release-summary {
+    @apply flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5;
+  }
+
+  .changelog-release-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .changelog-release-summary:hover .changelog-release-title {
+    color: color-mix(in oklab, var(--foreground) 80%, var(--brand));
+  }
+
+  .changelog-release-heading {
+    @apply flex items-baseline gap-3;
+  }
+
+  .changelog-release-title {
+    @apply font-display text-[1.25rem] font-semibold tracking-[-0.03em] text-foreground transition-colors;
+  }
+
+  .changelog-version-status {
+    @apply font-mono text-[0.75rem] tracking-[0.02em] text-muted-foreground;
+  }
+
+  .changelog-release-chevron {
+    @apply relative -mt-1 h-2.5 w-2.5 shrink-0 rotate-45 border-r-2 border-b-2 border-[var(--kz-line)] transition-transform duration-[var(--kz-duration)] ease-[var(--kz-ease-out)];
+  }
+
+  .changelog-release[open] .changelog-release-chevron {
+    @apply mt-1 rotate-[-135deg];
+  }
+
+  .changelog-release-body {
+    @apply border-t border-[var(--kz-line-subtle)] px-6 pt-5 pb-6;
+  }
+
+  .changelog-section + .changelog-section {
+    @apply mt-6;
+  }
+
+  .changelog-section-title {
+    @apply mb-3 text-[0.6875rem] font-semibold tracking-[0.12em] text-muted-foreground uppercase;
+  }
+
+  .changelog-subsection {
+    @apply mt-4;
+  }
+
+  .changelog-subsection-title {
+    @apply mb-2 text-[0.875rem] font-medium tracking-[-0.01em] text-foreground;
+  }
+
+  .changelog-entry-list {
+    @apply space-y-2;
+  }
+
+  .changelog-entry {
+    @apply flex gap-2.5 text-[0.9375rem] leading-[1.6];
+  }
+
+  .changelog-entry-text {
+    @apply text-foreground/85;
   }
 
   .changelog-empty-state {

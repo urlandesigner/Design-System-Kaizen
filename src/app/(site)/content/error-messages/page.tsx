@@ -8,7 +8,7 @@ import { DoDont } from "@/lib/documentation/editorial/do-dont";
 export const metadata: Metadata = {
   title: "Mensagens de erro",
   description:
-    "Como escrever mensagens de erro no Kaizen — a anatomia de um bom erro (o que aconteceu, por quê e como resolver), sem culpar o usuário nem usar jargão técnico.",
+    "Como escrever mensagens de erro no Kaizen — a anatomia de um bom erro (o que aconteceu, por quê e como resolver), sem culpar a pessoa nem usar jargão técnico.",
 };
 
 function ExampleCopy({ children }: { children: React.ReactNode }) {
@@ -71,7 +71,7 @@ export default function Page() {
             description: "Diz o que falhou e o que fazer para corrigir.",
             example: (
               <ExampleCopy>
-                Não foi possível salvar. Verifique sua conexão e tente novamente.
+                Não foi possível salvar: o nome do produto já existe na sua loja. Escolha outro.
               </ExampleCopy>
             ),
           },
@@ -86,7 +86,7 @@ export default function Page() {
       />
 
       <h2 className="mt-12 mb-3 text-[1.25rem] font-semibold tracking-[-0.02em] text-foreground">
-        Não culpe o usuário
+        Não culpe a pessoa
       </h2>
       <p className="doc-body">
         Mesmo quando a pessoa digitou algo errado, o tom não deve acusar. Foque no
@@ -107,7 +107,7 @@ export default function Page() {
         dontItems={[
           {
             label: "Acusa a pessoa",
-            description: "Coloca a culpa no usuário e aumenta a frustração.",
+            description: "Coloca a culpa na pessoa e aumenta a frustração.",
             example: (
               <ExampleCopy>Você digitou um e-mail inválido.</ExampleCopy>
             ),
