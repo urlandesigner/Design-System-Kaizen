@@ -14,17 +14,7 @@ export function AppProviders({ children }: AppProvidersProps) {
   return (
     <ThemeProvider>
       <KaizenThemeProvider>
-      <NavigationProvider
-        defaultExpandedSections={{
-          foundations: false,
-          components: true,
-          patterns: false,
-          templates: false,
-          accessibility: false,
-        }}
-      >
-        {children}
-      </NavigationProvider>
+      <NavigationProvider>{children}</NavigationProvider>
       </KaizenThemeProvider>
     </ThemeProvider>
   );

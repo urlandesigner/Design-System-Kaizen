@@ -359,21 +359,45 @@
   }
 
   .sidebar-section-trigger {
-    @apply flex w-full items-center justify-between rounded-xl px-2.5 py-1.5 text-left text-[0.625rem] font-semibold tracking-[0.12em] uppercase transition-[color,background-color] duration-[var(--kz-duration)] ease-[var(--kz-ease-out)];
-    color: var(--nav-fg);
+    @apply flex w-full items-center gap-2.5 rounded-xl px-1 py-1 text-left text-[0.8125rem] font-medium tracking-[-0.005em] transition-[color] duration-[var(--kz-duration)] ease-[var(--kz-ease-out)];
+    color: var(--muted-foreground);
   }
 
   .sidebar-section-trigger:hover {
-    color: var(--nav-fg-hover);
-    background-color: var(--nav-hover-bg);
+    color: color-mix(in oklab, var(--foreground) 70%, var(--muted-foreground));
+  }
+
+  .sidebar-section-trigger:hover .sidebar-section-icon {
+    color: color-mix(in oklab, var(--foreground) 70%, var(--muted-foreground));
+    background-color: color-mix(in oklab, var(--foreground) 9%, transparent);
   }
 
   .sidebar-section-trigger--active {
-    color: color-mix(in oklab, var(--foreground) 84%, var(--muted-foreground));
-    background-color: color-mix(in oklab, var(--foreground) 5%, transparent);
+    color: color-mix(in oklab, var(--foreground) 86%, var(--muted-foreground));
   }
 
-  .sidebar-section-trigger svg {
+  .sidebar-section-trigger--active .sidebar-section-icon {
+    color: color-mix(in oklab, var(--foreground) 80%, var(--muted-foreground));
+    background-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+  }
+
+  .sidebar-section-icon {
+    @apply grid size-6 shrink-0 place-items-center rounded-md transition-[color,background-color] duration-[var(--kz-duration)] ease-[var(--kz-ease-out)];
+    color: var(--muted-foreground);
+    background-color: color-mix(in oklab, var(--foreground) 6%, transparent);
+  }
+
+  .sidebar-section-icon svg {
+    @apply size-3.5;
+  }
+
+  .sidebar-section-label {
+    @apply min-w-0 flex-1 truncate;
+  }
+
+  .sidebar-section-chevron {
+    @apply ml-auto;
+    color: color-mix(in oklab, var(--muted-foreground) 70%, transparent);
     transition-duration: 240ms;
     transition-timing-function: var(--kz-ease-out);
   }
@@ -396,7 +420,49 @@
   }
 
   .sidebar-group-items {
-    @apply mt-0.5 min-h-0 space-y-0 overflow-hidden pl-0.5;
+    @apply relative mt-1 min-h-0 space-y-0 overflow-hidden pl-0;
+  }
+
+  .sidebar-group-items::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    width: 1px;
+    border-radius: 1px;
+    background-color: color-mix(in oklab, var(--foreground) 12%, transparent);
+  }
+
+  .sidebar-group-items .sidebar-link {
+    @apply rounded-lg py-[0.3rem] pr-3 pl-[2.375rem];
+  }
+
+  .sidebar-group-items a.sidebar-link:hover:not(.sidebar-link--active) {
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+    color: var(--foreground);
+  }
+
+  .sidebar-group-items a.sidebar-link--active,
+  .sidebar-group-items a.sidebar-link--active:hover {
+    color: var(--foreground);
+    font-weight: 600;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .sidebar-group-items a.sidebar-link--active::before {
+    content: "";
+    position: absolute;
+    left: calc(1rem - 1px);
+    top: 50%;
+    height: 1.05rem;
+    width: 2px;
+    border-radius: 1px;
+    background-color: var(--foreground);
+    transform: translateY(-50%);
   }
 
   .sidebar-link {
@@ -417,15 +483,21 @@
   }
 
   a.sidebar-link--primary {
-    @apply px-2.5 py-1.5 text-[0.625rem] font-semibold tracking-[0.12em] uppercase;
-    color: var(--nav-fg);
+    @apply rounded-lg px-1 py-1.5 text-[0.8125rem] font-medium tracking-[-0.005em];
+    color: color-mix(in oklab, var(--foreground) 72%, var(--muted-foreground));
   }
 
   a.sidebar-link--primary:hover:not(.sidebar-link--active) {
-    color: var(--nav-fg-hover);
-    background-color: var(--nav-hover-bg);
+    color: var(--foreground);
+    background-color: transparent;
     box-shadow: none;
     transform: none;
+  }
+
+  a.sidebar-link--primary.sidebar-link--active {
+    color: var(--foreground);
+    font-weight: 600;
+    background-color: transparent;
   }
 
   a.sidebar-link--active {

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 
 import { SiteFooter } from "@/app/(site)/site-footer";
 import { SiteHeader } from "@/app/(site)/site-header";
@@ -25,21 +24,7 @@ function toSectionId(title: string) {
 
 export function SiteShell({ children }: SiteShellProps) {
   const pathname = usePathname();
-  const { expandedSections, toggleSection, setSectionExpanded } =
-    useNavigation();
-
-  useEffect(() => {
-    for (const section of mainNavigation) {
-      const sectionId = toSectionId(section.title);
-      const isInSection = section.items.some((item) =>
-        navItemMatchesPath(pathname, item),
-      );
-
-      if (isInSection) {
-        setSectionExpanded(sectionId, true);
-      }
-    }
-  }, [pathname, setSectionExpanded]);
+  const { expandedSections, toggleSection } = useNavigation();
 
   return (
     <div className="site-shell">

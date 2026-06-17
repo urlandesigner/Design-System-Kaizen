@@ -33,11 +33,26 @@ export function isActiveNavItem(pathname: string, href: string): boolean {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-/** Ativa o hub da família quando o usuário está em páginas filhas (ex.: /components/button/filled). */
+/**
+ * Ativa o hub da família quando o usuário está em páginas filhas
+ * (ex.: /components/button/filled), mas sem ativar a "Visão geral" (/foundations)
+ * quando há um item irmão mais específico que combina (ex.: /foundations/colors).
+ */
 export function isSidebarNavActive(pathname: string, href: string): boolean {
   if (pathname === href) return true;
-  if (href !== "/" && pathname.startsWith(`${href}/`)) return true;
-  return false;
+  if (href === "/") return false;
+  if (!pathname.startsWith(`${href}/`)) return false;
+
+  // Match por prefixo: só ativa se nenhuma rota conhecida mais específica
+  // dentro de href também corresponder ao pathname atual.
+  const hasMoreSpecificMatch = getAllDocRoutes().some(
+    (route) =>
+      route !== href &&
+      route.startsWith(`${href}/`) &&
+      (pathname === route || pathname.startsWith(`${route}/`)),
+  );
+
+  return !hasMoreSpecificMatch;
 }
 
 export function isTopbarNavActive(pathname: string, href: string): boolean {

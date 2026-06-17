@@ -1,6 +1,7 @@
 "use client";
 
 import { SidebarNavItem } from "@/lib/documentation/editorial/sidebar-nav-item";
+import { SidebarSectionIcon } from "@/lib/documentation/editorial/sidebar-section-icon";
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/types/navigation";
 
@@ -21,7 +22,7 @@ function ChevronIcon({ expanded }: { expanded: boolean }) {
       aria-hidden
       viewBox="0 0 16 16"
       className={cn(
-        "size-3 shrink-0 text-muted-foreground/70 transition-transform duration-150",
+        "sidebar-section-chevron size-3 shrink-0 transition-transform duration-150",
         expanded && "rotate-180",
       )}
       fill="none"
@@ -35,6 +36,7 @@ function ChevronIcon({ expanded }: { expanded: boolean }) {
 
 export function SidebarGroup({
   title,
+  sectionId,
   items,
   pathname,
   isExpanded,
@@ -43,7 +45,7 @@ export function SidebarGroup({
   showDivider = false,
 }: SidebarGroupProps) {
   return (
-    <li className={cn(showDivider && "sidebar-group sidebar-group--divider")}>
+    <li className={cn("sidebar-group", showDivider && "sidebar-group--divider")}>
       <button
         type="button"
         aria-expanded={isExpanded}
@@ -53,7 +55,8 @@ export function SidebarGroup({
           isSectionActive && "sidebar-section-trigger--active",
         )}
       >
-        <span>{title}</span>
+        <SidebarSectionIcon sectionId={sectionId} />
+        <span className="sidebar-section-label">{title}</span>
         <ChevronIcon expanded={isExpanded} />
       </button>
       <div className="sidebar-group-panel" data-state={isExpanded ? "open" : "closed"}>
