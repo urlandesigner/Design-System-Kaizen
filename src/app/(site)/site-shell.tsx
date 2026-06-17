@@ -26,6 +26,25 @@ export function SiteShell({ children }: SiteShellProps) {
   const pathname = usePathname();
   const { expandedSections, toggleSection } = useNavigation();
 
+  // A home é uma landing: header + conteúdo centralizado + footer, sem sidebar.
+  // As demais rotas mantêm a navegação lateral de documentação.
+  const isLanding = pathname === "/";
+
+  if (isLanding) {
+    return (
+      <div className="site-shell site-shell--landing">
+        <SiteHeader />
+
+        <main className="site-main site-main--landing">
+          <div className="site-landing-inner">
+            {children}
+            <SiteFooter />
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="site-shell">
       <SiteHeader />

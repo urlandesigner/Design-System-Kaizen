@@ -275,7 +275,20 @@
   }
 
   .site-header-inner {
-    @apply relative mx-auto flex h-full w-full max-w-[var(--width-shell)] items-center gap-8 pl-[1.875rem] pr-6 lg:pr-9;
+    /* Páginas internas: alinha à grid (logo na gutter da sidebar, ações na do conteúdo) */
+    @apply relative flex h-full w-full items-center gap-8 pl-5 pr-8 lg:pr-12 xl:pr-16;
+  }
+
+  /* Landing: header acompanha a coluna central de conteúdo (75rem + gutter) */
+  .site-shell--landing .site-header-inner {
+    @apply mx-auto px-6 lg:px-8;
+    max-width: 78rem;
+  }
+
+  @media (min-width: 1024px) {
+    .site-shell--landing .site-header-inner {
+      max-width: 79rem;
+    }
   }
 
   .site-header-center {
@@ -527,6 +540,137 @@
 
   .site-main-inner:has(.home-hero) {
     @apply overflow-visible;
+  }
+
+  /* ── Landing (home) — sem sidebar, conteúdo centralizado ───────────── */
+  .site-shell--landing::before {
+    inset: var(--header-height) 0 0 0;
+  }
+
+  .site-main--landing {
+    @apply relative z-[1] w-full px-6 py-[var(--kz-rhythm-2xl)] lg:px-8;
+  }
+
+  .site-landing-inner {
+    @apply mx-auto w-full;
+    max-width: 75rem;
+  }
+
+  .home-page--landing {
+    @apply mx-auto;
+    max-width: 100%;
+  }
+
+  /* Hero centralizado */
+  .home-landing-hero {
+    @apply flex flex-col items-center pb-[var(--kz-rhythm-xl)] text-center;
+  }
+
+  .home-landing-hero .hero-eyebrow {
+    @apply justify-center;
+  }
+
+  .home-landing-tagline {
+    @apply mt-5 max-w-[30rem] font-mono text-[0.75rem] leading-relaxed tracking-[-0.01em] text-muted-foreground;
+  }
+
+  .home-page--landing .home-hero-actions {
+    @apply justify-center;
+  }
+
+  /* Revela o hero com stagger no carregamento */
+  @media (prefers-reduced-motion: no-preference) {
+    .home-landing-hero > * {
+      animation: home-hero-rise 0.7s var(--kz-ease-out) both;
+    }
+
+    .home-landing-hero > :nth-child(1) {
+      animation-delay: 0.02s;
+    }
+
+    .home-landing-hero > :nth-child(2) {
+      animation-delay: 0.08s;
+    }
+
+    .home-landing-hero > :nth-child(3) {
+      animation-delay: 0.16s;
+    }
+
+    .home-landing-hero > :nth-child(4) {
+      animation-delay: 0.24s;
+    }
+
+    .home-landing-hero > :nth-child(5) {
+      animation-delay: 0.32s;
+    }
+  }
+
+  /* Desliga o lockup SVG (continha o wordmark "Design system") */
+  .home-page--landing .home-hero-main::before,
+  .home-page--landing .home-hero-main::after {
+    display: none;
+  }
+
+  /* Ideograma 改善 como marca-d'água atrás do hero — só o glifo, sem texto */
+  .home-page--landing .home-landing-glyph {
+    @apply pointer-events-none absolute z-0 font-display select-none;
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    writing-mode: vertical-rl;
+    font-size: clamp(11rem, 22vw, 17rem);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--foreground);
+    opacity: 0.05;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 86%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 86%);
+  }
+
+  .dark .home-page--landing .home-landing-glyph {
+    color: #fff;
+    opacity: 0.07;
+  }
+
+  /* Seções: cabeçalhos e textos centrados, cards preservados */
+  .home-page--landing .home-section-label {
+    @apply justify-center;
+  }
+
+  .home-page--landing .home-section-label::after {
+    @apply hidden;
+  }
+
+  .home-page--landing .home-section-heading {
+    @apply mx-auto text-center;
+  }
+
+  .home-page--landing .home-section-title {
+    @apply mx-auto;
+  }
+
+  .home-page--landing .home-manifesto {
+    @apply text-center;
+  }
+
+  .home-page--landing .home-manifesto-quote {
+    @apply mx-auto;
+  }
+
+  .home-page--landing .home-manifesto-attribution {
+    @apply justify-center;
+  }
+
+  /* Updates: empilha e centraliza em vez do split assimétrico */
+  .home-page--landing .home-section--updates {
+    @apply block;
+  }
+
+  .home-page--landing .home-section--updates .home-update-board {
+    @apply mx-auto mt-8;
+    max-width: 40rem;
+    text-align: left;
   }
 
   .surface-card {

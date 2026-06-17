@@ -27,15 +27,25 @@ const latestUpdates = [
 
 export function HomeHero() {
   return (
-    <article className="home-page home-hero">
+    <article className="home-page home-page--landing home-hero">
       <div className="home-hero-main">
-        <header className="pb-[var(--kz-rhythm-xl)]">
+        <span className="home-landing-glyph" aria-hidden>
+          改善
+        </span>
+        <header className="home-landing-hero">
           <p className="hero-eyebrow">{siteConfig.organization} Design System</p>
           <h1 className="hero-title">{siteConfig.name}</h1>
           <p className="hero-lead">{siteConfig.description}</p>
-          <p className="mt-5 max-w-[28rem] font-mono text-[0.75rem] leading-relaxed tracking-[-0.01em] text-muted-foreground">
-            {siteConfig.tagline}
-          </p>
+          <p className="home-landing-tagline">{siteConfig.tagline}</p>
+          <div className="home-hero-actions">
+            <Link href="/get-started" className="home-button home-button--primary">
+              Começar agora
+              <span aria-hidden>→</span>
+            </Link>
+            <Link href="/components" className="home-button home-button--secondary">
+              Ver componentes
+            </Link>
+          </div>
         </header>
 
         <section aria-labelledby="home-explore-heading">
